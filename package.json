@@ -1,0 +1,25 @@
+{
+  "name": "redux-error-middleware",
+  "version": "1.0.0",
+  "description": "redux middleware to dispatch actions on errors",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnrhampton/redux-error-middleware.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "react",
+    "javascript"
+  ],
+  "author": "JRH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnrhampton/redux-error-middleware/issues"
+  },
+  "homepage": "https://github.com/johnrhampton/redux-error-middleware#readme"
+}
