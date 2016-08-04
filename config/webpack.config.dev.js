@@ -15,7 +15,7 @@ module.exports = {
 
   entry: [
     path.join(srcPath, 'app'),
-    path.join(srcPath, 'assets/styles/app.css')
+    path.join(srcPath, 'app.css')
   ],
 
   output: {
