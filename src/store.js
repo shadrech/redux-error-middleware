@@ -5,9 +5,13 @@ import errorMiddleware from '../lib/index';
 
 import rootReducer from './reducer';
 
-export default () => {
-  const initial_state = {todos: []};
-  const middleware = [errorMiddleware, thunkMiddleware, createLogger({colors: {}, collapsed: true})];
+export default (initial_state) => {
+  const actions = {
+    error: [{type: 'HANDLE_ERROR', text: 'ERROR'}],
+    forbidden: [{type: 'FORBIDDEN_ERROR', text: 'FORBIDDEN'}]
+  };
+
+  const middleware = [errorMiddleware(actions), thunkMiddleware, createLogger({colors: {}, collapsed: true})];
 
   return createStore(rootReducer, initial_state, compose(applyMiddleware(...middleware)));
 };
