@@ -1,25 +1,14 @@
-import {createStore, applyMiddleware, compose} from 'redux';
-import errorMiddleware from '../lib/index';
-
-import user from './reducer';
-const initial_state = {};
+import createStore from './main.store';
 
 (function() {
 
-  console.log('starting');
+  const store = createStore();
 
-  const createReduxStore = () => {
-    const baseline_middlewares = [errorMiddleware];
-
-    return createStore(
-      user,
-      initial_state,
-      compose(applyMiddleware(...baseline_middlewares))
-    );
-  };
-
-  const store = createReduxStore();
-
-  console.log('store created');
+  // Dispatch some actions
+  store.dispatch({type: 'ADD_TODO', text: 'Learn about actions'});
+  store.dispatch({type: 'ADD_TODO', text: 'Learn about reducers'});
+  store.dispatch({type: 'ADD_TODO', text: 'Learn about store'});
+  store.dispatch({type: 'TOGGLE_TODO', index: 0});
+  store.dispatch({type: 'TOGGLE_TODO', index: 1});
 
 }());
