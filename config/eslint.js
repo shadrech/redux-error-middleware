@@ -15,7 +15,7 @@ module.exports = {
   parser: 'babel-eslint',
 
   // import plugin is termporarily disabled, scroll below to see why
-  plugins: ['react'/*, 'import'*/],
+  plugins: [/*'import'*/],
 
   env: {
     es6: true,
@@ -166,26 +166,6 @@ module.exports = {
     // 'import/no-extraneous-dependencies': WARNING,
     // 'import/no-named-as-default': WARNING,
     // 'import/no-named-as-default-member': WARNING,
-    // 'import/no-unresolved': [WARNING, { commonjs: true }],
-
-    // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'react/jsx-equals-spacing': [WARNING, 'never'],
-    'react/jsx-handler-names': [WARNING, {
-      eventHandlerPrefix: 'handle',
-      eventHandlerPropPrefix: 'on',
-    }],
-    'react/jsx-no-duplicate-props': [WARNING, { ignoreCase: true }],
-    'react/jsx-no-undef': WARNING,
-    'react/jsx-pascal-case': [WARNING, {
-      allowAllCaps: true,
-      ignore: [],
-    }],
-    'react/jsx-uses-react': WARNING,
-    'react/jsx-uses-vars': WARNING,
-    'react/no-deprecated': WARNING,
-    'react/no-direct-mutation-state': WARNING,
-    'react/no-is-mounted': WARNING,
-    'react/react-in-jsx-scope': WARNING,
-    'react/require-render-return': WARNING
+    // 'import/no-unresolved': [WARNING, { commonjs: true }]
   }
 };
