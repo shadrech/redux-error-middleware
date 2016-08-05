@@ -1,4 +1,3 @@
-
 export default (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -11,29 +10,22 @@ export default (state = {}, action) => {
 };
 
 function addTodo(state, action) {
-  let todos = [...state.todos, {
-    text: action.text,
-    completed: false
-  }];
-
   return Object.assign({}, state, {
-    todos: todos,
+    todos: action.error ? state.todos : [...state.todos, {
+      text: action.text,
+      completed: false
+    }],
     error: action.error
   });
 }
 
 function toggleTodo(state, action) {
-  let todos = state.todos.map((todo, index) => {
-    if (index === action.index) {
-      return Object.assign({}, todo, {
-        completed: !todo.completed
-      });
-    }
-    return todo;
-  });
-
   return Object.assign({}, state, {
-    todos: todos,
-    error: action.error
+    todos: state.todos.map((todo, index) => {
+      if (index === action.index) {
+        return Object.assign({}, todo, {completed: !todo.completed});
+      }
+      return todo;
+    })
   });
 }
