@@ -6,12 +6,8 @@ export function addTodo(text) {
   return {type: 'ADD_TODO', text};
 }
 
-export function handleError(message) {
-  return (dispatch, getState) => {
-
-    console.warn(message);
-
-  }
+export function addTodoError() {
+  return {type: 'ADD_TODO', error: new Error('could not add todo')};
 }
 
 export function toggleTodo(index) {
