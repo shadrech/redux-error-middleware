@@ -1,16 +1,16 @@
 import createStore from './store';
-import {addTodo, addTodoError, toggleTodo} from './action';
 
 (function() {
 
-  const store = createStore();
+  const store = createStore({todos: []});
 
-  store.dispatch(addTodo('Learn about actions'));
-  // store.dispatch(addTodo('Learn about reducers'));
-  // store.dispatch(addTodo('Learn about store'));
-  // store.dispatch(toggleTodo(0));
-  //store.dispatch(toggleTodo(1));
+  // store.dispatch({type: 'ADD_TODO', text: 'Learn about actions'});
+  // store.dispatch({type: 'ADD_TODO', text: 'Learn about reducers'});
+  // store.dispatch({type: 'ADD_TODO', text: 'Learn about store'});
+  // store.dispatch({type: 'TOGGLE_TODO', index: 0});
+  // store.dispatch({type: 'TOGGLE_TODO', index: 1});
 
-  store.dispatch(addTodoError());
-
+  // simulate error
+  store.dispatch({type: 'ADD_TODO', error: new Error('could not add todo')});
+  store.dispatch({type: 'ADD_TODO', error: {response: {status: 403}}});
 }());
