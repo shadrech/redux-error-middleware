@@ -1,8 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {createStore, applyMiddleware, compose} from 'redux';
+import errorMiddleware from '../lib/index';
 
-import StartScreen from './StartScreen';
+import user from './reducer';
+const initial_state = {};
 
-if (document.getElementById('local-root')) {
-  ReactDOM.render(<StartScreen />, document.getElementById('local-root'));
-}
+(function() {
+
+  console.log('starting');
+
+  const createReduxStore = () => {
+    const baseline_middlewares = [errorMiddleware];
+
+    return createStore(
+      user,
+      initial_state,
+      compose(applyMiddleware(...baseline_middlewares))
+    );
+  };
+
+  const store = createReduxStore();
+
+  console.log('store created');
+
+}());
