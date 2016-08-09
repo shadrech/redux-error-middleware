@@ -2,6 +2,8 @@
 
 Middleware that dispatches custom actions when any action has an error.
 
+## Complete Documentation coming soon!! 
+
 ## Installation
 ```
 npm install redux-error-middleware
