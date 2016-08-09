@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node ./src/app",
     "build:dist": "npm3 install && rimraf ./dist && webpack --config ./config/webpack.config.dist.js",
-    "test": "mocha  --compilers js:babel-core/register --reporter spec ./test/*.js"
+    "test": "mocha --compilers js:babel-core/register --reporter spec ./test/*.js"
   },
   "repository": {
     "type": "git",
