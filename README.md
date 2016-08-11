@@ -93,3 +93,25 @@ export default (initial_state) => {
 };
 
 ```
+
+## Run Locally
+
+Global Dependencies:
+```
+npm install -g npm3
+```
+
+Run the sandbox node app:
+```
+npm3 install && npm start
+```
+
+Build distributable output in the `dist` folder
+```
+npm run build:dist
+```
+
+Run unit tests
+```
+npm test
+```
