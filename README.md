@@ -20,10 +20,11 @@ import createLogger from 'redux-logger';
 import errorMiddleware from 'redux-error-middleware';
 
 import rootReducer from './reducer';
+import {handleErrorActionCreator} from './actions';
 
 export default (initial_state) => {
   const actions = {
-    error: [{type: 'HANDLE_ERROR', text: 'ERROR'}, handleErrorFunction],
+    error: [{type: 'HANDLE_ERROR', text: 'ERROR'}, handleErrorActionCreator],
     forbidden: [{type: 'FORBIDDEN_ERROR', text: 'FORBIDDEN'}]
   };
 
