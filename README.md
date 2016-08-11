@@ -7,9 +7,9 @@ Middleware that dispatches defined actions when the current action has an error.
 npm install redux-error-middleware
 ```
 
-To enable redux-error-middleware, use the [applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html) function. This example also uses [redux-thunk](https://github.com/gaearon/redux-thunk) and [redux-logger](https://github.com/evgenyrodionov/redux-logger).
+To enable redux-error-middleware, use the [applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html) function. The below example also uses [redux-thunk](https://github.com/gaearon/redux-thunk) and [redux-logger](https://github.com/evgenyrodionov/redux-logger).
 
-In this initial release, you can define an actions object with error and forbidden keys.  
+Version `1.x` of _redux-error-middleware_ allows you to define an actions object with error and forbidden keys.  
 
 Their values are an array of actions to dispatch. Each entry in the array can either be an object (action) or function (action creator).
 
@@ -35,11 +35,11 @@ export default (initial_state) => {
 ```
 
 ## Motivation
-Imagine wanting to display a [SnackBar](https://github.com/johnrhampton/SnackBar) or log to papertrail anytime an error occurs.  This middleware allows you to define those action(s) once when creating your Redux store.
+Imagine wanting to display a [SnackBar](https://github.com/johnrhampton/SnackBar) or log to papertrail anytime an error occurs.  This middleware allows you to define those action(s) when creating your Redux store.
 
 Imagine wanting to graciously handle situations where your user's token has expired.  This middleware allows you to define multiple actions that can be dispatched on a 403.
 
-For example. Let's say when your API responds with a 403 (forbidden), you want to alert and logout the user.
+For example. Let's say when your API responds with a 403 (forbidden), you want to notify and logout the user.
 
 ### Actions
 ```javascript
@@ -80,7 +80,6 @@ import {showSnack, logout} from './actions';
 import rootReducer from './reducer';
 
 export default (initial_state) => {
-
   /**
    * dispatch showSnack and logout when our API responds with a 403 status
    */
